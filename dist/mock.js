@@ -8304,6 +8304,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            that.dispatchEvent(new Event(event.type /*, false, false, that*/ ))
 	        }
 
+            MockXMLHttpRequest.prototype.upload = createNativeXMLHttpRequest().upload;
+            
 	        // 如果未找到匹配的数据模板，则采用原生 XHR 发送请求。
 	        if (!item) {
 	            // 创建原生 XHR 对象，调用原生 open()，监听所有原生事件
